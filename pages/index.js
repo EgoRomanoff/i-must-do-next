@@ -128,17 +128,17 @@ function App() {
         <meta property="og:image" content="https://i.ibb.co/zXWJ0sQ/og-image.jpg" key="ogimage" />
         <meta property="og:image:width" content="1200" key="ogimgw" />
         <meta property="og:image:height" content="630" key="ogimgh" />
-        <meta property="og:url" content="egoromanoff.github.io/i-must-do-react/" key="ogurl" />
+        <meta property="og:url" content="https://i-must-do-next.vercel.app/" key="ogurl" />
 
         <meta property="og:locale" content="en_US" key="oglocale" />
         <meta property="og:locale:alternate" content="ru_RU" key="oglocalealt" />
         <meta property="og:site_name" content="Web TODO 'I Must Do'" key="ogsitename" />
         <meta property="og:description" content="Web TODO-application based on React.js" key="ogdescription" />
 
-        <meta name="twitter:card" content="summary" key="twcard" />
+        <meta name="twitter:card" content="summary_large_image" key="twcard" />
         <meta name="twitter:site" content="@EgoRomanoff" key="twsite" />
         <meta name="twitter:title" content="I Must Do" key="twtitle" />
-        <meta name="twitter:description" content="Web TODO-application. Based on React.js" key="twdescription" />
+        <meta name="twitter:description" content="Web TODO-application based on React.js" key="twdescription" />
         <meta name="twitter:image" content="https://i.ibb.co/fSCGCWS/og-image-twitter.jpg" key="twimage" />
       </Head>
       <AppContext.Provider value={{
