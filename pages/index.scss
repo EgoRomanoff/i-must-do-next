@@ -1,0 +1,99 @@
+@use '../scss/vars';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: vars.$font-f-regular;
+  font-weight: 400;
+  font-size: 16px;
+  color: vars.$font-c-primary;
+  letter-spacing: -.5px;
+
+  * {
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(vars.$green-500, .3);
+      border: 2px solid vars.$white;
+      border-left: 3px solid vars.$white;
+      border-radius: 4px;
+
+      &:hover {
+        background: rgba(vars.$green-500, 1);
+      }
+    }
+  }
+}
+
+#__next {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 15px;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  max-width: 1366px;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  border: 2px solid vars.$green-500;
+  border-radius: vars.$radius-primary;
+  background: vars.$white;
+}
+
+.skeleton__ellipse, .skeleton__item {
+
+  &:before {
+    position: absolute;
+    content: '';
+    background: vars.$green-100;
+  }
+}
+
+.skeleton__ellipse {
+
+  &:before {
+    border-radius: 50%;
+  }
+}
+
+.skeleton__item {
+  position: relative;
+  border-radius: vars.$radius-primary;
+  overflow: hidden;
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: vars.$skeleton-gradient;
+    animation: background 1.5s linear infinite;
+  }
+}
+
+@keyframes background {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

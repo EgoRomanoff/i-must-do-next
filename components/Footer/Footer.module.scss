@@ -1,0 +1,48 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.wrapper {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  border-top: 2px solid vars.$green-500;
+  padding: 10px 15px;
+  font-size: .875rem;
+}
+
+.totalCounter {
+  margin-right: auto;
+}
+
+.waitingCounter, .inProcessCounter, .completeCounter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 30px;
+  margin-left: 15px;
+  padding-left: 18px;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+  }
+}
+
+.waitingCounter:before {
+  background: vars.$c-waiting;
+}
+
+.inProcessCounter:before {
+  background: vars.$c-inProcess;
+}
+
+.completeCounter:before {
+  background: vars.$c-complete;
+}

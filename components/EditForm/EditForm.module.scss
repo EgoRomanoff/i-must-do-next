@@ -1,0 +1,116 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  width: 100%;
+
+  &.showed {
+    animation: fadeIn .2s ease-out forwards;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  padding-left: 10px;
+  min-height: 30px;
+}
+
+.title {
+  font-size: 1rem;
+  color: vars.$font-c-secondary;
+  font-weight: 400;
+}
+
+.name, .description {
+
+  &:after {
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    font-size: .75rem;
+    font-weight: 400;
+    color: vars.$font-c-secondary;
+  }
+}
+
+.name {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-top: 5px;
+
+  &:before {
+    content: 'обязательно *';
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    font-size: .75rem;
+    font-weight: 400;
+    color: vars.$font-c-secondary;
+  }
+
+  &:after {
+    content: 'до 100 символов';
+  }
+}
+
+.description {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+  color: vars.$font-c-secondary;
+  font-size: 1rem;
+  margin-top: 30px;
+
+  &:after {
+    content: 'до 500 символов';
+  }
+}
+
+.datetime {
+  position: relative;
+  display: flex;
+  width: min-content;
+  margin-top: 5px;
+  padding-right: 40px;
+  font-size: .875rem;
+  margin-bottom: 50px;
+
+  & > * + * {
+    margin-left: 10px;
+  }
+}
+
+.btns {
+  display: flex;
+  margin-top: auto;
+  // add gap by left margin between all elements in this div
+  & * + * {
+    margin-left: 10px;
+  }
+}
+
+.invalid {
+
+  & > textarea {
+    border-color: vars.$red-500;
+    background: rgba(vars.$red-500, .15);
+  }
+
+  &:before {
+    content: 'Поле не заполнено';
+    font-weight: 500;
+    color: vars.$red-500;
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}

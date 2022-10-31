@@ -1,0 +1,29 @@
+// @import './fonts';
+@use './fonts';
+
+$white: #FFF;
+$green-100: #E0EEEB;
+$green-500: #2D8D79;
+$red-500: #C74037;
+$skeleton-gradient: linear-gradient(90deg,
+        $green-100 0%,
+        #F1F8F6 25%,
+        $green-100 50%,
+        #F1F8F6 75%,
+        $green-100 100%);
+$font-c-primary: #1C1C1C;
+$font-c-secondary: #555555;
+$c-add: $green-500;
+$c-waiting: #959595;
+$c-inProcess: #E8AB35;
+$c-complete: #51B965;
+$c-edit: #3D76AB;
+$c-delete: $red-500;
+$c-enter: $green-500;
+$c-save: $green-500;
+$c-cancel: $red-500;
+$c-close: $red-500;
+
+$radius-primary: 4px;
+
+$font-f-regular: 'Gotham Pro', sans-serif;

@@ -1,0 +1,197 @@
+// @import "../../../scss/vars";
+@use '../../../scss/vars';
+// common class
+.btn {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  border: 1px solid;
+  background: vars.$white;
+  cursor: pointer;
+  transition: color .2s ease,
+              background .2s ease;
+
+  & svg {
+    pointer-events: none;
+    transition: fill .2s ease;
+  }
+}
+// large buttons
+.btnLg {
+  height: 30px;
+  padding: 0 12px;
+  border-radius: vars.$radius-primary;
+  font-size: .875rem;
+
+  & svg {
+    margin-left: 10px;
+  }
+
+  // large Add
+  &.btnAdd {
+    border-color: vars.$green-500;
+    color: vars.$green-500;
+
+    & svg {
+      fill: vars.$c-add;
+    }
+
+    &:hover {
+      background: vars.$green-500;
+    }
+  }
+  // large Edit
+  &.btnEdit {
+    border-color: vars.$c-edit;
+    color: vars.$c-edit;
+
+    & svg {
+      fill: vars.$c-edit;
+    }
+
+    &:hover {
+      background: vars.$c-edit;
+    }
+  }
+  // large Delete
+  &.btnDelete {
+    border-color: vars.$c-delete;
+    color: vars.$c-delete;
+
+    & svg {
+      fill: vars.$c-delete;
+    }
+
+    &:hover {
+      background: vars.$c-delete;
+    }
+  }
+  // large Save
+  &.btnSave {
+    border-color: vars.$c-save;
+    color: vars.$c-save;
+
+    & svg {
+      fill: vars.$c-save;
+    }
+
+    &:hover {
+      background: vars.$c-save;
+    }
+  }
+  // large Cancel
+  &.btnCancel {
+    border-color: vars.$c-cancel;
+    color: vars.$c-cancel;
+
+    & svg {
+      fill: vars.$c-cancel;
+    }
+
+    &:hover {
+      background: vars.$c-cancel;
+    }
+  }
+  // large Close
+  &.btnClose {
+    border-color: vars.$c-cancel;
+    color: vars.$c-cancel;
+
+    & svg {
+      fill: vars.$c-cancel;
+    }
+
+    &:hover {
+      background: vars.$c-cancel;
+    }
+  }
+}
+// small buttons
+.btnSm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  font-size: .875rem;
+  background: vars.$white;
+
+  // small Complete
+  &.btnComplete:hover {
+    background: vars.$c-complete;
+  }
+  // small Edit
+  &.btnEdit:hover {
+    background: vars.$c-edit;
+  }
+  // small InProcess
+  &.btnInProcess:hover {
+    background: vars.$c-inProcess;
+  }
+  // small Delete
+  &.btnDelete:hover {
+    background: vars.$c-delete;
+  }
+  // small Enter & Cancel button
+  &.btnEnter, &.btnCancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    width: 60px;
+    border: 1px solid;
+    border-radius: vars.$radius-primary;
+  }
+  // small Enter
+  &.btnEnter {
+    border-color: vars.$c-enter;
+    color: vars.$c-enter;
+
+    &:hover {
+      background: vars.$c-enter;
+    }
+  }
+  // small Cancel
+  &.btnCancel {
+    border-color: vars.$c-cancel;
+    color: vars.$c-cancel;
+
+    &:hover {
+      background: vars.$c-cancel;
+    }
+  }
+  // small Close
+  &.btnClose {
+    border-color: vars.$c-close;
+    color: vars.$c-close;
+
+    &:hover {
+      background: vars.$c-close;
+    }
+  }
+}
+
+.btn:not(:disabled) {
+
+  &:hover {
+    color: vars.$white;
+
+    & > svg {
+      fill: vars.$white;
+    }
+  }
+}
+
+
+.btn:disabled {
+  opacity: .5;
+  cursor: initial;
+
+  &:hover {
+    background: vars.$white;
+  }
+}

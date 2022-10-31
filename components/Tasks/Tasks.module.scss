@@ -1,0 +1,43 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  min-width: 300px;
+  max-width: 80%;
+  border-right: 2px solid vars.$green-500;
+}
+
+.resizer {
+  position: absolute;
+  right: -3px;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+  cursor: col-resize;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .resizer {
+    display: none;
+  }
+}
+
+@media (max-width: 705px) {
+  .wrapper {
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .resizer {
+    display: none;
+  }
+}

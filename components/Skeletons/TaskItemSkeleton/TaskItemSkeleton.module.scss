@@ -1,0 +1,39 @@
+// @import '../../../scss/vars';
+@use '../../../scss/vars';
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  padding: 10px 15px 10px 44px;
+  border-radius: vars.$radius-primary;
+  user-select: none;
+  overflow: hidden;
+
+  &:before {
+    top: calc(50% - 16px / 2);
+    left: 14px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.name, .description {
+  width: 100%;
+}
+
+.description, .datetime {
+  height: 14px;
+  margin-top: 6px;
+}
+
+.name {
+  height: 16px;
+}
+
+.datetime {
+  width: 120px;
+}

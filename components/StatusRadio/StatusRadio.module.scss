@@ -1,0 +1,93 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  width: min-content;
+  margin-left: auto;
+}
+
+.input {
+  position: relative;
+
+  & + & {
+    margin-left: 6px;
+  }
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: vars.$radius-primary;
+  background: vars.$white;
+  font-weight: 500;
+  font-size: .875rem;
+  opacity: .4;
+}
+
+.radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.input .radio:checked + .label {
+  opacity: 1;
+}
+
+.input.waiting {
+
+  .label {
+    border-color: vars.$c-waiting;
+    color: vars.$c-waiting;
+  }
+
+  .radio:checked + .label {
+    background: vars.$c-waiting;
+    color: vars.$white;
+  }
+}
+
+.input.inProcess {
+
+  .label {
+    border-color: vars.$c-inProcess;
+    color: vars.$c-inProcess;
+  }
+
+  .radio:checked + .label {
+    background: vars.$c-inProcess;
+    color: vars.$white;
+  }
+}
+
+.input.complete {
+
+  .label {
+    border-color: vars.$c-complete;
+    color: vars.$c-complete;
+  }
+
+  .radio:checked + .label {
+    background: vars.$c-complete;
+    color: vars.$white;
+  }
+}
+
+.wrapper.edited {
+
+  & .label {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

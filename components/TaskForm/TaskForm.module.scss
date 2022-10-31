@@ -1,0 +1,16 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+  padding: 15px 10px 15px 20px;
+  transition: opacity .25s ease-out;
+  overflow-y: scroll;
+}
+
+.empty {
+  text-align: center;
+  font-weight: 500;
+}

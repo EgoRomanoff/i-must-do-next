@@ -1,0 +1,58 @@
+// @import "../../../scss/vars";
+@use '../../../scss/vars';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  width: min-content;
+  height: 26px;
+}
+
+.input {
+  outline: none;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid vars.$green-100;
+  border-radius: vars.$radius-primary;
+  color: vars.$font-c-primary;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  resize: none;
+  overflow: hidden;
+
+  &:hover {
+    background: vars.$green-100;
+  }
+
+  &:focus {
+    border-color: vars.$green-500;
+    background: vars.$green-100;
+  }
+
+  &[type="date"], &[type="time"] {
+    font-size: inherit;
+    padding-right: 5px;
+
+    &::-webkit-calendar-picker-indicator {
+      visibility: visible;
+    }
+  }
+
+  &[type="date"] {
+    width: 130px;
+
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('../../../public/img/date__icon.svg');
+    }
+  }
+
+  &[type="time"] {
+    width: 95px;
+
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('../../../public/img/time__icon.svg');
+    }
+  }
+}

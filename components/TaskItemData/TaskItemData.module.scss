@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.taskDataIcon {
+  flex-shrink: 0;
+}
+
+.taskDataValue {
+  margin-left: 6px;
+  font-size: .875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

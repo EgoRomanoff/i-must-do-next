@@ -1,0 +1,39 @@
+// @import "../../../scss/vars";
+@use '../../../scss/vars';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: max-content;
+}
+
+.input {
+  outline: none;
+  width: 100%;
+  height: fit-content;
+  min-height: max-content;
+  //max-height: 150px;
+  padding: 10px 10px 25px;
+  border: 1px solid vars.$green-100;
+  border-radius: vars.$radius-primary;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  resize: none;
+  overflow: hidden;
+  transition: background .2s ease,
+  border-color .2s ease;
+
+  &:hover {
+    background: vars.$green-100;
+  }
+
+  &:focus {
+    border-color: vars.$green-500;
+    background: vars.$green-100;
+  }
+}

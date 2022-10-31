@@ -1,0 +1,17 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: 2px solid vars.$green-500;
+}
+
+.logo {
+  width: 71px;
+  height: 36px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}

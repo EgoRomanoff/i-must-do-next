@@ -1,0 +1,50 @@
+// @import '../../../scss/vars';
+@use '../../../scss/vars';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 38px;
+  margin-top: auto;
+  border-top: 2px solid vars.$green-500;
+  padding: 11px 15px;
+}
+
+.totalCounter {
+  position: relative;
+  width: 70px;
+  height: 14px;
+  margin-right: auto;
+  background: vars.$green-100;
+  border-radius: vars.$radius-primary;
+}
+
+.taskCounter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 14px;
+  margin-left: 15px;
+
+  .ellipse {
+    position: relative;
+    width: 14px;
+    height: 100%;
+
+    &:before {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .item {
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 5px;
+  }
+}

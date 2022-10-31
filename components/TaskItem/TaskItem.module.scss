@@ -1,0 +1,144 @@
+// @import '../../scss/vars';
+@use '../../scss/vars';
+
+.wrapper {
+  position: relative;
+  border-radius: vars.$radius-primary;
+  overflow: hidden;
+  border: 1px solid transparent;
+  padding: 10px 15px 10px 44px;
+  height: 80px;
+  flex-shrink: 0;
+  transition: background .2s ease;
+  animation: fadeIn .25s ease-in-out forwards;
+
+  &:before,
+  .inner,
+  .inner > * {
+    transition: opacity .5s ease;
+  }
+
+  &:hover {
+    background: rgba(vars.$green-500, .1);
+  }
+
+  &:before {
+    position: absolute;
+    top: calc(50% - 16px / 2);
+    left: 14px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  user-select: none;
+}
+
+.name {
+  font-family: vars.$font-f-regular;
+  font-weight: 700;
+  flex-shrink: 0;
+  height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.description, .date, .time {
+  margin-top: 4px;
+}
+
+.description {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+  color: vars.$font-c-secondary;
+}
+
+.datetime {
+  display: flex;
+}
+
+.date, .time {
+  font-family: vars.$font-f-regular;
+  font-weight: 500;
+}
+
+.date + .time {
+  margin-left: 15px;
+}
+
+.btns {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  display: flex;
+  border-radius: vars.$radius-primary;
+  background: rgba(vars.$white, .85);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0 12px 0 rgba(vars.$green-500, .4);
+  overflow: hidden;
+  z-index: 10;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: opacity .2s ease,
+              transform .3s ease;
+}
+
+.wrapper:hover .btns {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.taskWaiting:before {
+  background: vars.$c-waiting;
+}
+
+.taskInProcess:before {
+  background: vars.$c-inProcess;
+}
+
+.taskComplete:before {
+  background: vars.$c-complete;
+}
+
+.selected {
+  border: 1px solid vars.$green-500;
+  background: rgba(vars.$green-500, .1);
+
+  & .btns {
+    display: none;
+  }
+}
+
+.unavailable {
+
+  &:before, *, *:before, *:after {
+    opacity: .65;
+  }
+
+  & .btns {
+    display: none;
+  }
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
