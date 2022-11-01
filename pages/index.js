@@ -2,12 +2,12 @@ import Tasks from "../components/Tasks/Tasks"
 import TaskForm from "../components/TaskForm/TaskForm"
 import { useEffect, useState } from "react"
 import { AppContext } from "../context"
-import Head from "next/head"
-// import Image from 'next/image'
-// import ogImage from '../public/img/og-image.jpg'
-// import ogImageTwitter from '../public/img/og-image-twitter.jpg'
+import HeadOG from "../components/HeadOG/HeadOG"
+import staticMeta from "./static-meta"
 
 function App() {
+
+  const ogImage = '/img/og-image.jpg'
 
   const [isLoading, setIsLoading] = useState(false)    // state of checking loading status
   const [tasks, setTasks] = useState([])               // state of task list
@@ -115,32 +115,18 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Head>
-        <title>I Must Do</title>
-        <meta
-          name="description"
-          content="Web TODO-application based on React.js"
-          key="description"
-        />
+      <HeadOG
+        title={'I Must Do'}
+        description={'Web TODO-application based on React.js'}
+        ogTitle={'I Must Do'}
+        ogType={'website'}
+        ogUrl={'https://i-must-do-next.vercel.app'}
+        ogImg={ ogImage }
+        ogSiteName={'Web TODO \'I Must Do\''}
+        twitterCard={ staticMeta.twitterCard }
+        twitterSite={ staticMeta.twitterSite }
+      />
 
-        <meta property="og:title" content="I Must Do" key="ogtitle" />
-        <meta property="og:type" content="website" key="ogtype" />
-        <meta property="og:image" content="https://i.ibb.co/zXWJ0sQ/og-image.jpg" key="ogimage" />
-        <meta property="og:image:width" content="1200" key="ogimgw" />
-        <meta property="og:image:height" content="630" key="ogimgh" />
-        <meta property="og:url" content="https://i-must-do-next.vercel.app/" key="ogurl" />
-
-        <meta property="og:locale" content="en_US" key="oglocale" />
-        <meta property="og:locale:alternate" content="ru_RU" key="oglocalealt" />
-        <meta property="og:site_name" content="Web TODO 'I Must Do'" key="ogsitename" />
-        <meta property="og:description" content="Web TODO-application based on React.js" key="ogdescription" />
-
-        <meta name="twitter:card" content="summary_large_image" key="twcard" />
-        <meta name="twitter:site" content="@EgoRomanoff" key="twsite" />
-        <meta name="twitter:title" content="I Must Do" key="twtitle" />
-        <meta name="twitter:description" content="Web TODO-application based on React.js" key="twdescription" />
-        <meta name="twitter:image" content="https://i.ibb.co/fSCGCWS/og-image-twitter.jpg" key="twimage" />
-      </Head>
       <AppContext.Provider value={{
         tasks, selectedTask, setSelectedTask, changeStatus, deleteTask, editTask, convertDate
       }}>
