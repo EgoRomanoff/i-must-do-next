@@ -20,7 +20,7 @@ function Usage() {
         twitterSite={ staticMeta.twitterSite }
       />
       <Link href="/">Назад</Link>
-      <h1>How to use 'I Must Do'</h1>
+      <h1>How to use &apos;I Must Do&apos;</h1>
       <Image
         src={ comingSoonImg }
         width='640'
