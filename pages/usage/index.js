@@ -9,13 +9,13 @@ function Usage() {
   return (
     <div>
       <HeadOG
-        title={'I Must Do - Usage'}
-        description={'Wide description about how to use \'I Must Do\' and get the greatest user experience!'}
-        ogTitle={'How to use \'I Must Do\''}
-        ogType={'article'}
-        ogUrl={'https://i-must-do-next.vercel.app/usage'}
+        title={`I Must Do - Usage`}
+        description={`Wide description about how to use 'I Must Do' and get the greatest user experience!`}
+        ogTitle={`How to use 'I Must Do'`}
+        ogType={`article`}
+        ogUrl={`https://i-must-do-next.vercel.app/usage`}
         ogImg={ comingSoonImg }
-        ogSiteName={'Web TODO \'I Must Do\''}
+        ogSiteName={`Web TODO 'I Must Do'`}
         twitterCard={ staticMeta.twitterCard }
         twitterSite={ staticMeta.twitterSite }
       />
