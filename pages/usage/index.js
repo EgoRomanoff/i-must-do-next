@@ -1,6 +1,6 @@
 import Link from "next/link"
 import HeadOG from "../../components/HeadOG/HeadOG"
-import staticMeta from "../static-meta"
+import staticMeta from "../../public/static-meta"
 import Image from "next/image"
 
 function Usage() {

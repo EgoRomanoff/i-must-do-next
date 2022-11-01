@@ -3,7 +3,7 @@ import TaskForm from "../components/TaskForm/TaskForm"
 import { useEffect, useState } from "react"
 import { AppContext } from "../context"
 import HeadOG from "../components/HeadOG/HeadOG"
-import staticMeta from "./static-meta"
+import staticMeta from "../public/static-meta"
 
 function App() {
 
